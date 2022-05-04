@@ -10,16 +10,19 @@ export default function Widget({text, handleClick}) {
     return(
         <div className="absolute bottom-4 right-4 items-baseline">
             {opened && 
-            <div className="h-44 w-56 bg-[#18181B] rounded-md p-1">
+            <div className="h-52  w-72 bg-[#18181B] rounded-lg p-1">
                 <div className="flex justify-around">
-                    <h2 className="ml-8 text-[#f4f4f5]">Deixe seu feedback</h2>
+                    <h2 className="ml-12 text-[#f4f4f5]">Deixe seu feedback</h2>
                     <button onClick={handleOpenedWidget} className="text-[#a1a1a4] font-semibold hover:text-[#f4f4f5]">x</button>
                 </div>
-                <div className="flex justify-around mt-5 text-[#f4f4f5]">
-                    <WidgetCard text="Problema" img="https://images.emojiterra.com/twitter/v12/512px/1f41b.png"/>
-                    <WidgetCard text="Ideia"/>
-                    <WidgetCard text="Outro"/>
+                <div className="flex justify-around mt-7 text-[#f4f4f5]">
+                    <WidgetCard text="Problema" imgSrc="https://images.emojiterra.com/twitter/v12/512px/1f41b.png"/>
+
+                    <WidgetCard text="Ideia" imgSrc="https://hotemoji.com/images/dl/r/electric-light-bulb-emoji-by-twitter.png"/>
+                    
+                    <WidgetCard text="Outro" imgSrc="https://clipartcraft.com/images/thought-bubble-transparent-emoji-2.png"/>
                 </div>
+                <p className="text-[#a1a1a4] text-sm text-center mt-8">Feito por <span className="underline">Francisco Neto</span></p>
             </div>
             }
 

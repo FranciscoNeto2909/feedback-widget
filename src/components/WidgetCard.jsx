@@ -1,8 +1,9 @@
-export default function WidgetCard({text,img}) {
+export default function WidgetCard({text,imgSrc}) {
     return(
-        <div className="row align-center">
-            <img src={img} alt="" className="h-10 self-center"/>
-            <h3>{text}</h3>
+        <div className="flex flex-col items-center justify-center bg-[#27272a] h-24 w-20 text-center rounded-md">
+            <button></button>
+            <img src={imgSrc} alt="" className="h-8 mb-2 mx-auto"/>
+            <h3 className="">{text}</h3>
         </div>
     )
 }
