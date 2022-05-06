@@ -1,6 +1,7 @@
 import { useState } from "react"
 import CloseButton from "./CloseButton"
-import WidgetCard from "./Card"
+import Card from "./Card"
+import FeedBackItem from "./FeedbackItem"
 
 export default function Form({handleOpenedWidget}) {
     const [fType, setFType] = useState("")
@@ -11,21 +12,24 @@ export default function Form({handleOpenedWidget}) {
 
     return(
         <div className="h-52 mb-3 w-72 bg-[#18181B] rounded-lg p-2 relative shadow-lg">
+                {fType ? <FeedBackItem fType={fType} setFType={setFType} handleOpenedWidget={handleOpenedWidget}/>:
+                <>
                 <header>
                     <h2 className="text-center">Deixe seu feedback</h2>
                     <CloseButton handleOpenedWidget={handleOpenedWidget}/>
                 </header>
                 <div className="flex justify-around mt-7">
-                    <WidgetCard text="Problema" imgSrc={bugUrl} setFType={setFType}/>
+                    <Card text="Problema" imgSrc={bugUrl} setFType={setFType}/>
 
-                    <WidgetCard text="Ideia" imgSrc={ideiaUrl} setFType={setFType}/>
+                    <Card text="Ideia" imgSrc={ideiaUrl} setFType={setFType}/>
                     
-                    <WidgetCard text="Outro" imgSrc={troughUrl} setFType={setFType}/>
+                    <Card text="Outro" imgSrc={troughUrl} setFType={setFType}/>
                 </div>
                 <footer>
                     <p className="text-[#a1a1a4] text-sm text-center mt-6">Feito por <span className="underline">Francisco Neto</span></p>
                 </footer>
-                {fType && console.log(fType)}
+                </>
+                }
         </div>
     )
 }
